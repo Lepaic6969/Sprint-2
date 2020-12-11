@@ -7,7 +7,7 @@ from db.userdb import database_users
 from db.userdb import update_user, get_user, user_lookup_clearance
 from models.usermodel import UserIn, UserLookUp
 
-
+api=FastAPI()
 
 @api.post("/user/login/")
 async def login(user_in: UserIn):
