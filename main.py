@@ -38,5 +38,5 @@ async def update(user_in:UserUpdatePassword):
                             detail="La clave del usuario es incorrecta")
     
     user_in_db.password=user_in.new_password
-    n=update_user(user_in_db)
-    return n
+    update_user(user_in_db)
+    return  {"password":"actualizada"}
