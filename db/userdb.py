@@ -47,6 +47,9 @@ def get_user(email:str):
 def update_user(user_in_db: UserInDB):
     database_users[user_in_db.email] = user_in_db
     return user_in_db
+
+#Autorización de búsqueda de usuario
+
     
 def user_lookup_clearance(clear:str):
     if clear <=5:
