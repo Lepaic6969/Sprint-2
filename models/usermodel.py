@@ -4,8 +4,9 @@ class UserIn(BaseModel):
     email: str
     password: str
 
-class UserLookUp(BaseModel):
-    email: str
+
+class UserOut(BaseModel):
+    email:str
     name: str
     last_name: str
-    department: str
+    documents : dict

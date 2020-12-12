@@ -1,4 +1,4 @@
-from typing import Dict
+from typing import Dict, Optional
 from pydantic import BaseModel
 
 class UserInDB(BaseModel):
@@ -8,6 +8,7 @@ class UserInDB(BaseModel):
     last_name: str
     department: str
     clearance: int
+    documents: Optional [dict] = None
     
 database_users = Dict[str,UserInDB]
 
@@ -17,7 +18,8 @@ database_users = {
                                         "name": "Cinthya",
                                         "last_name":"Murgas",    
                                         "department": "Gerencia",
-                                        "clearance" : 5}),
+                                        "clearance" : 5,
+                                        "documents":{"Document1":"https://docs.google.com/document/d/e/2PACX-1vRMpDdAcPp0qtDAq1TWb0E0EjAOZfbmF7OsgSpjq3inQpDVXxhVnEAUxVYSVp6kyH4pHRBsbiFkV1o5/pub","Documento2":"https://docs.google.com/document/d/e/2PACX-1vQFmmlFIKKlhWifLw7opH5cfzDCr10cuZA8hPtNyQhLyhTqs3kNL5KjFMQHKUPcKwx7GUYD87-1fWrB/pub"}}),
     "martin@example.com" : UserInDB(**{"email": "martin@example.com",
                                         "password": "ejemplo987",
                                         "name": "Martin",
@@ -48,9 +50,5 @@ def update_user(user_in_db: UserInDB):
     database_users[user_in_db.email] = user_in_db
     return user_in_db
     
-def user_lookup_clearance(clear:str):
-    if clear <=5:
-        for k in database_users:
-            if UserInDB["clearance"] == clear:
-                return database_users.values(k)
+
             
