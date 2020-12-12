@@ -28,7 +28,7 @@ async def get_users_by_clearance(clear: int):
     return user_out
 
 @api.put("/user/update/")
-async def update(user_in:UserUpdatePasword):
+async def update(user_in:UserUpdatePassword):
     user_in_db=get_user(user_in.email)
     if user_in_db==None:
         raise HTTPException(status_code=404,
