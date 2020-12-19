@@ -9,6 +9,20 @@ from models.usermodel import UserIn, UserOut
 
 api = FastAPI()
 
+##########################################################################################
+from fastapi.middleware.cors import CORSMiddleware
+origins = [
+"http://localhost.tiangolo.com", "https://localhost.tiangolo.com",
+"http://localhost", "http://localhost:8080","http://localhost:8081","https://dokimanapp.herokuapp.com"
+]
+api.add_middleware(
+CORSMiddleware, allow_origins=origins,
+allow_credentials=True, allow_methods=["*"], allow_headers=["*"],
+)
+
+
+##########################################################################################
+
 @api.get("/")
 async def home():
     return{"message":"Dokiman: File Management"}
@@ -23,7 +37,7 @@ async def login(user_in: UserIn):
         return {"Autenticado": False}
     return {"Autenticado": True}
 
-@api.get("/users/documents/{email}")
+@api.get("/user/balance/{username}")
 async def get_document(email:str):
     user_in_db = get_user(email)
     if user_in_db == None:
