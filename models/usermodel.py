@@ -10,3 +10,7 @@ class UserOut(BaseModel):
     name: str
     last_name: str
     documents : dict
+
+class UserAuth(BaseModel):
+    name: str
+    last_name: str
