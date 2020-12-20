@@ -19,7 +19,7 @@ database_users = {
                                         "last_name":"Murgas",    
                                         "department": "Gerencia",
                                         "clearance" : 5,
-                                        "documents":{"Document1":"https://docs.google.com/document/d/e/2PACX-1vRMpDdAcPp0qtDAq1TWb0E0EjAOZfbmF7OsgSpjq3inQpDVXxhVnEAUxVYSVp6kyH4pHRBsbiFkV1o5/pub","Documento2":"https://docs.google.com/document/d/e/2PACX-1vQFmmlFIKKlhWifLw7opH5cfzDCr10cuZA8hPtNyQhLyhTqs3kNL5KjFMQHKUPcKwx7GUYD87-1fWrB/pub"}}),
+                                        "documents":{"Acuerdo de Paz":"https://docs.google.com/acuerdodepaz","Reforma Tributaria":"www.reformatributaria.com"}}),
     "martin@example.com" : UserInDB(**{"email": "martin@example.com",
                                         "password": "ejemplo987",
                                         "name": "Martin",
