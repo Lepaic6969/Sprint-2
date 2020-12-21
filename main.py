@@ -7,6 +7,8 @@ from db.userdb import database_users
 from db.userdb import update_user, get_user
 from models.usermodel import UserIn, UserOut, UserAuth
 
+api = FastAPI()
+
 ##########################################################################################
 from fastapi.middleware.cors import CORSMiddleware
 origins = [
