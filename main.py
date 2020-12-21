@@ -37,12 +37,14 @@ async def login(user_in: UserIn):
         return {"Autenticado": False}
     return {"Autenticado": True}
 
-@api.get("/user/balance/{email}")
+@api.get("/user/documento/{email}")
 async def get_document(email:str):
     user_in_db = get_user(email)
     if user_in_db == None:
         raise HTTPException(status_code=404, detail="El usuario no existe")
     user_out = UserOut(**user_in_db.dict())
+    if user_out == None:
+        raise HTTPException(status_code=404, detail="El usuario no tiene documentos guardados")
     return user_out
 
 @api.post("/user/signup/")
